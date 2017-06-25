@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Tue May 23 23:56:33 2017
 
@@ -6,16 +5,8 @@ Created on Tue May 23 23:56:33 2017
 """
 import matplotlib.pyplot as plt
 
-#import matplotlib.image as mpimg
-#import numpy as np
-#from PIL import  Image 
-
-#img = Image.open(ruta)
-#plt.imshow(img)
-#plt.show()
-
-
 class Imagen:
+# -*- coding: utf-8 -*-
     def __init__(self, ruta, nombre, etiqueta, clase):
         self.ruta = ruta
         self.nombre = nombre 
@@ -44,8 +35,8 @@ class Imagen:
     def getEtiqueta(self):
         return self.etiqueta
     
-    def setID(self, categoria):
-        self.categoria = categoria
+    def setID(self, Id):
+        self.Id = Id
         
     def getID(self):
         return self.categoria
@@ -56,9 +47,16 @@ class Imagen:
     def getClase(self):
         return self.clase
        
-    def mostrar(self):
-        try:
-            img = mpimg.imread(self.getRuta + self.getNombre)
-            plt.imshow(img)
-        except: 
-          print "EERROR DE ARCHIVO"
+    #def mostrar(self):
+        #try:
+            #img = mpimg.imread(self.getRuta + self.getNombre)
+            #plt.imshow(img)
+        #except: 
+         # print "EERROR DE ARCHIVO"
+          
+    def Json(self):
+        if self.getID == None:
+            return '{\n"ruta": ' + '"' + self.getRuta() + '",' + '\n"nombre": ' + '"' + self.getNombre() + '",' + '\n"etiqueta": ' + '",' + self.getEtiqueta() + '",' + '\n"clase": ' + '"' + self.getClase() + '",' + '\n"id": ' + '"' + self.Id + '"\n}' 
+        else:
+            return '{\n"ruta": ' + '"' + self.getRuta() + '",' + '\n"nombre": ' + '"' + self.getNombre() + '",' + '\n"etiqueta": ' + '",' + self.getEtiqueta() + '",' + '\n"clase": ' + '"' + self.getClase() + '",' + '\n"id": ' + '"None"\n}' 
+    
