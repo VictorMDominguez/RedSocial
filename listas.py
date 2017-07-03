@@ -55,14 +55,7 @@ def listaRutas(ruta):
     return lista
 
 
-
-def mostrar(ruta):
-    try:
-        img = mpimg.imread(ruta)
-        plt.imshow(img)
-    except: 
-          print "Error de archivo"
-    return "hola" 
+ 
     
 
     

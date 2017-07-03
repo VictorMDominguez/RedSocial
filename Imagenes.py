@@ -34,8 +34,4 @@ class Imagenes():
     def vacio(self):
         return self.lista == []
     
-    def Json(self):
-        resp = '{\n"Imagenes": {\n"Imagen": [
-        for i in self.lista:
-            resp += '\n' + i.Json()
-        return resp + ']\n}\n}'
+   
